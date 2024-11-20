@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Interactive card details form</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/Style.css">
+  <link rel="stylesheet" href="assets/css/Desktop-Style.css">
+</head>
+<body>
+
+  <main class="main">
+    <section class="card-view">
+      <div class="front-card">
+        <img src="assets/images/card-logo.svg" alt="">
+        <div class="card-number">
+          <span>0000</span>
+          <span>0000</span>
+          <span>0000</span>
+          <span>0000</span>
+        </div>
+
+        <div class="card-info">
+          <div class="card-name">
+            <span class="name">JANE APLESSED</span>
+          </div>
+          <div class="card-validity">
+            <span id="month_display">00</span>/<span id="year_display">00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="back-card">
+        <span class="card-cvv">000</span>
+      </div>
+    </section>
+
+    <section class="form-card">
+      <form action="" class="form">
+        <div class="form-wrapper">
+          <label for="card-name">CARDHOLDER NAME</label>
+          <input type="text" name="card-name" id="card-name" placeholder="e.g. Jane Appleseed" maxlength="30">
+        </div>
+
+        <div class="form-wrapper">
+          <label for="card-number">CARD NUMBER</label>
+          <input type="text" name="card-number" id="card-number" placeholder="e.g. 1234 5678 9123 0000" maxlength="16" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+        </div>
+
+        <div class="form-wrapper date">
+          <div class="input-date">
+            <label for="month year">EXP. DATE (MM/YY)</label>
+            <div class="input-flex">
+              <input type="text" name="month" maxlength="2"  id="month" placeholder="MM" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+                  
+              <input type="text" name="year" maxlength="2" minlength="2" min="24" id="year" placeholder="YY" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+            </div>
+          </div>
+
+          <div class="form-wrapper cvv">
+            <label for="cvv">CVV</label>
+            <input type="text" name="cvv" maxlength="3" id="cvv" placeholder="e.g. 123" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+          </div>
+        </div>
+
+        <button type="submit"  id="button-submit">Confirm</button>
+      </form>
+    </section>
+
+    <section class="added-card">
+      <img src="assets/images/icon-complete.svg" alt="">
+      <h1>THANK YOU!</h1>
+      <p>We've added your card details</p>
+      <button type="button" class="added-button" onclick="button_added()">Continue</button>
+    </section>
+  </main>
+  
+  <div class="attribution">
+    <div> Challenge by <a href="https://www.frontendmentor.io/profile/theJRodrigues" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/theJRodrigues">Jean Gabriel Rodrigues</a>.</div>
+   
+  </div>
+
+
+  <script src="assets/js/index.js"></script>
+</body>
+</html>
